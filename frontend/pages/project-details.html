@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details | Task Manager</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body class="app-shell">
+    <nav id="navbar" class="navbar"></nav>
+    <main class="page-container">
+      <section class="toolbar">
+        <div>
+          <h1 id="projTitle" class="page-title">Loading...</h1>
+          <p id="projDesc" class="page-subtitle"></p>
+        </div>
+        <button id="addTaskBtn" class="btn-primary" data-admin-only>+ Add Task</button>
+      </section>
+
+      <div id="pageMsg" class="message hide"></div>
+
+      <section class="split">
+        <article class="card">
+          <div class="card-header">
+            <h2>Overview</h2>
+          </div>
+          <div class="list">
+            <div class="project-item">
+              <strong>Members</strong>
+              <p id="memberCount" class="muted">0</p>
+            </div>
+            <div class="project-item">
+              <strong>Tasks</strong>
+              <p id="taskCount" class="muted">0</p>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <h2>Team</h2>
+          </div>
+          <div id="memberList" class="list"></div>
+        </article>
+      </section>
+
+      <section class="card" style="margin-top: 24px;">
+        <div class="card-header">
+          <h2>Tasks</h2>
+        </div>
+        <div id="tasksList" class="list"></div>
+      </section>
+    </main>
+
+    <div id="taskModal" class="modal">
+      <div class="modal-card">
+        <div class="card-header">
+          <h2>New Task</h2>
+          <button id="closeTaskModal" class="btn-secondary" type="button">Close</button>
+        </div>
+        <div id="taskFormMsg" class="message hide"></div>
+        <form id="taskForm" class="form-grid">
+          <div class="field">
+            <label for="taskTitle">Task name</label>
+            <input id="taskTitle" name="title" type="text" placeholder="What needs to be done?" required />
+          </div>
+          <div class="field">
+            <label for="taskDesc">Description</label>
+            <textarea id="taskDesc" name="description" rows="3" placeholder="Any extra context..." required></textarea>
+          </div>
+          <div class="split">
+            <div class="field">
+              <label for="priority">Priority</label>
+              <select id="priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="status">Status</label>
+              <select id="status" name="status">
+                <option value="pending" selected>Pending</option>
+                <option value="in-progress">In Progress</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+          </div>
+          <div class="split">
+            <div class="field">
+              <label for="assigneeSelect">Assign to</label>
+              <select id="assigneeSelect" name="assignedTo" required></select>
+            </div>
+            <div class="field">
+              <label for="dueDate">Due date</label>
+              <input id="dueDate" name="dueDate" type="date" required />
+            </div>
+          </div>
+          <button id="submitTaskBtn" class="btn-primary" type="submit">Create Task</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/project-details.js"></script>
+  </body>
+</html>

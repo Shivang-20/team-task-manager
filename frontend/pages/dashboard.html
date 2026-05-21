@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Task Manager</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body class="app-shell">
+    <nav id="navbar" class="navbar"></nav>
+    <main class="page-container">
+      <section class="hero">
+        <div class="hero-card">
+          <h1 class="page-title">Your task overview</h1>
+          <p>Keep track of what's in progress, what's overdue, and what your team has finished.</p>
+        </div>
+      </section>
+
+      <div id="dashMsg" class="message hide"></div>
+
+      <section class="grid stats-grid">
+        <article class="card stat-card">
+          <span class="stat-label">Total Tasks</span>
+          <span id="totalCount" class="stat-value">0</span>
+        </article>
+        <article class="card stat-card">
+          <span class="stat-label">Completed</span>
+          <span id="doneCount" class="stat-value">0</span>
+        </article>
+        <article class="card stat-card">
+          <span class="stat-label">Pending</span>
+          <span id="waitingCount" class="stat-value">0</span>
+        </article>
+        <article class="card stat-card">
+          <span class="stat-label">Overdue</span>
+          <span id="overdueCount" class="stat-value">0</span>
+        </article>
+      </section>
+
+      <section class="grid content-grid">
+        <article class="card">
+          <div class="card-header">
+            <h2>Recent Tasks</h2>
+          </div>
+          <div id="recentTasksList" class="list"></div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <h2>How roles work</h2>
+          </div>
+          <div class="list">
+            <div class="project-item">
+              <strong>Admin</strong>
+              <p class="muted">Can create projects, assign tasks, and see everything across the team.</p>
+            </div>
+            <div class="project-item">
+              <strong>Member</strong>
+              <p class="muted">Sees their own assigned tasks and can update statuses as work progresses.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>
