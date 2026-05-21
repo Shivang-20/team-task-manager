@@ -109,7 +109,7 @@ button, input, select, textarea {
   width: 100%;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: #26bc26;
+  background: #3b46c4;
   padding: 12px 14px;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
