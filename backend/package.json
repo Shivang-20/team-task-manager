@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Backend for Team Task Manager",
   "main": "server.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
