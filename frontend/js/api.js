@@ -3,7 +3,7 @@ const BASE_URL =
   window.APP_CONFIG?.API_URL ||
   (["127.0.0.1", "localhost"].includes(window.location.hostname)
     ? "http://localhost:5000/api"
-    : "https://team-task-manager-production-0108.up.railway.app/api");
+    : "https://team-task-manager-production-f9b0.up.railway.app/api");
 
 const api = axios.create({ baseURL: BASE_URL });
 
